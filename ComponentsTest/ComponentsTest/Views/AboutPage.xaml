@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ComponentsTest.Views.AboutPage"
+             xmlns:vm="clr-namespace:ComponentsTest.ViewModels"
+             xmlns:controls="clr-namespace:ComponentsTest.Components.Controls"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">               
+                <Grid BackgroundColor="Green">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="44" />
+                        <RowDefinition Height="44" />
+                        <RowDefinition Height="44" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <controls:EntryLable x:Name="lableC"  Grid.ColumnSpan="4" Text="" BackgroundColor="Gray"  HeightRequest="44" FontSize="20" WidthRequest="10" />
+                    <Button x:Name="btn1" Grid.Row="1"  Grid.Column="1" Text="1" BackgroundColor="{StaticResource Primary}"/>
+                    <Button x:Name="btn2" Grid.Row="1"  Grid.Column="2" Text="2" BackgroundColor="{StaticResource Primary}"/>
+                    <Button x:Name="btn3" Grid.Row="1"  Grid.Column="3" Text="3" BackgroundColor="{StaticResource Primary}"/>           <Button x:Name="clearBtn" Grid.Row="1"  Grid.Column="4" Text="清理" BackgroundColor="{StaticResource Primary}"/>
+                </Grid>
+            </StackLayout>           
+        </ScrollView>    
+
+    </Grid>
+    
+</ContentPage>
