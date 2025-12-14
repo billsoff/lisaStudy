@@ -69,7 +69,9 @@
                 charIndex++;
             }
         }
-    }    [Fact]
+    }
+
+    [Fact]
     public void SurrogatePair()
     {
         Encoding utf8 = Encoding.UTF8;
